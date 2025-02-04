@@ -28,10 +28,6 @@ public class ContainerInfoController {
         // Get Linux Kernel Version
         String kernelVersion = getKernelVersion();
 
-        // Get Container CPU & Memory Limits (if running in Kubernetes)
-        String cpuLimit = getCGroupValue("/sys/fs/cgroup/cpu/cpu.max");
-        String memoryLimit = getCGroupValue("/sys/fs/cgroup/memory/memory.limit_in_bytes");
-
         // Add Data to Model
         model.addAttribute("architecture", architecture);
         model.addAttribute("hostname", hostname);
@@ -39,8 +35,6 @@ public class ContainerInfoController {
         model.addAttribute("osVersion", osVersion);
         model.addAttribute("javaVersion", javaVersion);
         model.addAttribute("kernelVersion", kernelVersion);
-        model.addAttribute("cpuLimit", cpuLimit);
-        model.addAttribute("memoryLimit", memoryLimit);
 
         return "container-info"; // This maps to src/main/resources/templates/container-info.html
     }
