@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Container Information</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin-top: 50px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            background-color: #E87722;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .table {
+            margin-top: 20px;
+        }
+        .footer {
+            margin-top: 30px;
+            padding: 10px;
+            text-align: center;
+            background: #007bff;
+            color: white;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>Container Information</h1>
+            <p>Details about the container running this Spring Boot application.</p>
+        </div>
+
+        <table class="table table-bordered">
+            <tr>
+                <th>Pod Name (Hostname)</th>
+                <td th:text="${hostname}">Loading...</td>
+            </tr>
+            <tr>
+                <th>Architecture</th>
+                <td th:text="${architecture}">Loading...</td>
+            </tr>
+            <tr>
+                <th>Operating System</th>
+                <td th:text="${osName}">Loading...</td>
+            </tr>
+            <tr>
+                <th>OS Version</th>
+                <td th:text="${osVersion}">Loading...</td>
+            </tr>
+            <tr>
+                <th>Kernel Version</th>
+                <td th:text="${kernelVersion}">Loading...</td>
+            </tr>
+            <tr>
+                <th>Java Version</th>
+                <td th:text="${javaVersion}">Loading...</td>
+            </tr>
+            <tr>
+                <th>CPU Limit (CGroup)</th>
+                <td th:text="${cpuLimit}">Loading...</td>
+            </tr>
+            <tr>
+                <th>Memory Limit (CGroup)</th>
+                <td th:text="${memoryLimit}">Loading...</td>
+            </tr>
+        </table>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

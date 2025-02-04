@@ -31,6 +31,12 @@
 		</dependency>
 		<!-- end::actuator[] -->
 
+    	<!-- Thymeleaf for Rendering HTML -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+
 		<!-- tag::tests[] -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
